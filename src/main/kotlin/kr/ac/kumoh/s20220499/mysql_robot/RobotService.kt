@@ -9,4 +9,8 @@ class RobotService(val repository: RobotRepository) {
                                                     // 상속받은 JpaRepository에 이 함수가 있다.
     }
     // fun getAllRobots(): List<Robot> = repository.findAll() <- 이렇게 써도 된다.
+
+    fun getRobotWithWeapons(): List<EquipmentDto> {
+        return repository.findAllEquipment()
+    }
 }

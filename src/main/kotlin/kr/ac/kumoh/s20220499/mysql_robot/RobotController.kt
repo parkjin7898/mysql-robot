@@ -19,6 +19,11 @@ class RobotController(val service: RobotService) {      // 이게 있어야 serv
         val robots = service.getAllRobots()
         return ResponseEntity.ok(robots)
     }
+
+    @GetMapping("/with-weapons")                // /api/robots/with-weapons
+    fun getRobotsWithWeapons(): ResponseEntity<List<EquipmentDto>> {
+        return ResponseEntity.ok(service.getRobotWithWeapons())
+    }
     
 //    // return을 하지 않고 그냥
 //    // fun welcome() = "20220499" 이렇게 해도 됨
